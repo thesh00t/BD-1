@@ -19,3 +19,4 @@ update products set price=price*1.05 order by price limit 5
 #теперь самых дорогих:
 
 update products set price=price*1.05 order by price desc limit 5
+---------------------------------------------------------------------------
