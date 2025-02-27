@@ -1,9 +1,11 @@
 
 
 #Удалить из таблицы products все товары, которых нет на складе.
+
 delete from products where count<1;
 
 #Удалить из таблицы cars все автомобили начиная с 2010 года и старше
+
 delete from cars where year<=2010
 
 #Измените статус (status) заказа под номером (id) 5 с delivery на success.
