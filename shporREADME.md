@@ -21,6 +21,7 @@ update products set price=price*1.05 order by price limit 5
 update products set price=price*1.05 order by price desc limit 5
 ---------------------------------------------------------------------------
 У отмененных заказов status равен "cancelled". У новых заказов status равен "new".
+
 номер (id) и сумму (sum) заказа.
 ---------------------------------------------------------------------------
 NULL – это особое слово в MySQL и в отличии от "cancelled" или "new", его нужно писать без кавычек. 
@@ -34,8 +35,10 @@ INSERT INTO table (field1, field2) VALUES (value1, value2);
 INSERT INTO table SET field1=value1, field2=value2;
 ---------------------------------------------------------------------------
 #Добавьте в таблицу users нового пользователя
+
 insert into users SET id=10, first_name='Никита', last_name='Петров'
 ---------------------------------------------------------------------------
 #Добавьте в таблицу products новый товар
+
 insert into products (id, name, count, price) value
 ---------------------------------------------------------------------------
