@@ -1,5 +1,4 @@
-delete from cars where country = "JP" and (power <= 80 or power >= 130)
-delete from cars where country = 'KR' or power<80
+
 
 #Удалить из таблицы products все товары, которых нет на складе.
 delete from products where count<1;
