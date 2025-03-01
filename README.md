@@ -46,5 +46,13 @@ INSERT INTO orders (id, products, sum) VALUES (6, 4, 8000);
 INSERT INTO products (id, name, price, count) VALUES (7, 'VR-очки', 70000, 2);
 ![image](https://github.com/user-attachments/assets/2cd55a50-0e8c-417d-8ad2-6d0307d7d85a)
 --------------------------------------------------------------------------------------------------------------------------------------------------
+4 файл
+
+В таблицу products внесли данные с ошибкой, вместо "PS5" в наименовании написали IMAC. Исправьте ошибку.
+
+UPDATE products SET name = 'PS5' WHERE name = 'IMAC';
+![image](https://github.com/user-attachments/assets/6e1c717f-503c-4246-9611-933962924dbf)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
