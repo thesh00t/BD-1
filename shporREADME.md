@@ -31,7 +31,8 @@ NULL – это особое слово в MySQL и в отличии от "canc
 Новые записи в таблицу можно добавить не только с помощью VALUES, но и с помощью SET. 
 Следующие два запроса идентичны: 
  
-INSERT INTO table (field1, field2) VALUES (value1, value2); 
+INSERT INTO table (field1, field2) VALUES
+(value1, value2); 
 ---------------------------------------------------------------------------
 INSERT INTO table SET field1=value1, field2=value2;
 ---------------------------------------------------------------------------
