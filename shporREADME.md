@@ -77,3 +77,5 @@ DELETE FROM table
 WHERE condition;
 
 ---------------------------------------------------------------------------
+![image](https://github.com/user-attachments/assets/9182264e-6af9-4dd6-8e39-bb22d4f7adff)
+**
