@@ -117,3 +117,77 @@ create table users ( id int (10) unsigned, first_name varchar (50) unsigned, las
 create table users ( id int (10) unsigned, first_name varchar (50), last_name varchar (60), bio text ); INSERT INTO users (id, first_name, last_name, bio) VALUES (1,'Антон','Кулик','С отличием окончил 39 лицей.'), (2,'Сергей','Давыдов',''), (3,'Дмитрий','Соколов','Профессиональный программист.')
 ```
 ![image](https://github.com/user-attachments/assets/2713ba61-ab0d-4490-8b05-c56a7af914be)
+
+
+
+
+##Л.р 5 29.03
+
+1) Выберите из таблицы orders 4 самых дорогих заказов за всё время.
+Данные нужно отсортировать в порядке убывания цены.
+Отмененные заказы не учитывайте.
+```
+SELECT * FROM orders WHERE status != 'cancelled' ORDER BY sum DESC LIMIT 4;
+```
+![image](https://github.com/user-attachments/assets/17a9d5d3-bd02-48fe-a296-bacd001b6051)
+-
+
+2) Выберите из таблицы products название и цены четырех самых дешевых товаров, которые есть на складе.
+```
+SELECT name, price FROM products WHERE count > 0 ORDER BY price ASC LIMIT 4;
+```
+![image](https://github.com/user-attachments/assets/70db0d24-7355-48fa-91fd-a808965720e5)
+-
+
+3) Выберите из таблицы orders три последних заказа (по дате date) стоимостью от 3200 рублей и выше.
+Данные отсортируйте по дате в обратном порядке.
+```
+SELECT *
+FROM orders
+WHERE sum >= 3200
+ORDER BY date DESC
+LIMIT 3;
+```
+![image](https://github.com/user-attachments/assets/8921aab4-e427-4b8b-8217-f2456e1164ad)
+-
+4) Создайте данную таблицу:
+```
+CREATE TABLE products (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    count INT,
+    price DECIMAL(10, 2)
+);
+
+INSERT INTO products (id, name, count, price) VALUES
+(1, 'Стиральная машина', 5, 10000.00),
+(2, 'Холодильник', 0, 10000.00),
+(3, 'Микроволновка', 3, 4000.00),
+(4, 'Пылесос', 2, 4500.00),
+(5, 'Вентилятор', 0, 700.00),
+(6, 'Телевизор', 7, 31740.00),
+(7, 'Тостер', 2, 2500.00),
+(8, 'Принтер', 4, 3000.00),
+(9, 'Активные колонки', 1, 2900.00),
+(10, 'Ноутбук', 4, 36990.00),
+(11, 'Посудомоечная машина', 0, 17800.00),
+(12, 'Видеорегистратор', 23, 4000.00),
+(13, 'Смартфон', 8, 12300.00),
+(14, 'Флешка', 4, 1400.00),
+(15, 'Блендер', 0, 5500.00),
+(16, 'Газовая плита', 5, 11900.00),
+(17, 'Клавиатура', 3, 1800.00);
+```
+![image](https://github.com/user-attachments/assets/3b0a0b41-a4ec-4eec-9ccf-f9aab7062ea3)
+-
+5) Из этой таблицы сделать выборку на основе задания: Сайт выводит товары по 5 штук. Выберите из таблицы products товары, которые пользователи увидят на 3 странице каталога при сортировке в порядке возрастания цены (price).
+```
+SELECT name, price
+FROM products
+ORDER BY price ASC
+LIMIT 5 OFFSET 10;
+```
+![image](https://github.com/user-attachments/assets/cf5eabf7-c18c-42af-a260-a970bf88aeae)
+
+
+
